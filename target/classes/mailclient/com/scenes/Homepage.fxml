@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AnchorHome" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mailclient.com.controllers.HomepageController">
+   <children>
+      <BorderPane prefHeight="620.0" prefWidth="1080.0" stylesheets="@../styles/styles.css">
+         <left>
+            <VBox prefHeight="620.0" prefWidth="226.0" styleClass="menu-panel" stylesheets="@../styles/styles.css" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane prefHeight="620.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="homepageButton" layoutX="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="163.0" prefWidth="215.0" style="-fx-background-color: #2a9d8f; -fx-cursor: hand;" styleClass="menu-button-home" stylesheets="@../styles/styles.css">
+                           <graphic>
+                              <ImageView fitHeight="185.0" fitWidth="186.0">
+                                 <image>
+                                    <Image url="@../images/logo_white.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <AnchorPane layoutY="185.0" prefHeight="427.0" prefWidth="226.0">
+                           <children>
+                              <Button fx:id="settingsButton" layoutX="14.0" layoutY="229.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Settings">
+                                 <font>
+                                    <Font name="Century" size="12.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="compose-button" />
+                                    <String fx:value="text" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="syncButton" layoutX="14.0" layoutY="120.0" mnemonicParsing="false" onAction="#syncMessages" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Receive">
+                                 <font>
+                                    <Font name="Century" size="12.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="compose-button" />
+                                    <String fx:value="text" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="quitButton" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" onAction="#terminateApp" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Quit">
+                                 <font>
+                                    <Font name="Century" size="12.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="compose-button" />
+                                    <String fx:value="text" />
+                                 </styleClass>
+                              </Button>
+                              <Button fx:id="composeButton" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToCompose" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Compose">
+                                 <font>
+                                    <Font name="Century" size="12.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="compose-button" />
+                                    <String fx:value="text" />
+                                 </styleClass>
+                              </Button>
+                              <ProgressIndicator fx:id="syncProgressIndicator" layoutX="100.0" layoutY="183.0" progress="0.0" style="visibility: true;" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="620.0" prefWidth="805.0" BorderPane.alignment="CENTER">
+               <children>
+                  <SplitPane dividerPositions="0.610032362459547" orientation="VERTICAL" prefHeight="667.0" prefWidth="854.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="352.0" prefWidth="852.0">
+                           <children>
+                              <ScrollPane layoutY="-3.0" prefHeight="378.0" prefWidth="852.0">
+                                 <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="617.0" prefWidth="848.0">
+                                       <children>
+                                          <TableView fx:id="tableView" layoutY="-1.0" prefHeight="620.0" prefWidth="847.0" stylesheets="@../styles/styles.css">
+                                            <columns>
+                                                <TableColumn fx:id="subjectCol" prefWidth="239.0" text="Subject" />
+                                                <TableColumn fx:id="fromCol" prefWidth="185.0" text="From" />
+                                                <TableColumn fx:id="toCol" prefWidth="187.0" text="To" />
+                                                <TableColumn fx:id="sentCol" prefWidth="120.0" text="Sent" />
+                                                <TableColumn fx:id="receivedCol" prefWidth="120.0" text="Received" />
+                                            </columns>
+                                             <styleClass>
+                                                <String fx:value="table-view" />
+                                                <String fx:value="column-header" />
+                                                <String fx:value="label" />
+                                             </styleClass>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                        <BorderPane prefHeight="239.0" prefWidth="851.0">
+                           <top>
+                              <ScrollPane prefHeight="80.0" prefWidth="798.0" BorderPane.alignment="CENTER">
+                                 <content>
+                                    <GridPane fx:id="selectedMessageMeta" prefHeight="64.0" prefWidth="1234.0">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="444.0" minWidth="10.0" prefWidth="59.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="1175.0" minWidth="10.0" prefWidth="1175.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label prefHeight="17.0" prefWidth="55.0" text="Subject:">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="12.0" prefHeight="17.0" prefWidth="45.0" text="From:" GridPane.rowIndex="1">
+                                             <padding>
+                                                <Insets left="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label layoutX="10.0" layoutY="33.0" text="To:" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="messageSubject" GridPane.columnIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="messageTo" layoutX="65.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                          <Label fx:id="messageFrom" layoutX="65.0" layoutY="12.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets left="5.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                       </children>
+                                    </GridPane>
+                                 </content>
+                              </ScrollPane>
+                           </top>
+                           <center>
+                              <ScrollPane prefHeight="178.0" prefWidth="852.0" BorderPane.alignment="CENTER">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="176.0" prefWidth="853.0">
+                                       <children>
+                                          <TextArea fx:id="messageText" editable="false" layoutY="6.0" prefHeight="171.0" prefWidth="838.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </center>
+                        </BorderPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

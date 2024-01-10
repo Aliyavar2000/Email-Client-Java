@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="621.0" prefWidth="1083.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <ToolBar>
+            <!-- Buttons für Aktionen -->
+            <Button text="Neue E-Mail" onAction="#handleNewEmail"/>
+            <Button text="E-Mail abrufen" onAction="#handleFetchEmails"/>
+            <Button text="Markieren" onAction="#handleMarkEmails"/>
+        </ToolBar>
+    </top>
+    
+    <center>
+        <SplitPane>
+            <!-- Liste der E-Mails -->
+            <ListView fx:id="emailListView" onMouseClicked="#handleEmailSelection"/>
+            
+            <!-- Anzeige der E-Mail-Inhalte -->
+            <VBox>
+                <TextArea fx:id="emailContentTextArea" editable="false"/>
+                <ToolBar>
+                    <!-- Weitere Aktionen -->
+                    <Button text="Antworten" onAction="#handleReply"/>
+                    <Button text="Weiterleiten" onAction="#handleForward"/>
+                </ToolBar>
+            </VBox>
+        </SplitPane>
+    </center>
+    
+    <bottom>
+        <ToolBar>
+            <!-- Weitere Optionen -->
+            <!-- <MenuItem text="Einstellungen" onAction="#handleSettings"/> -->
+            <Button text="Beenden" onAction="#handleExit"/>
+        </ToolBar>
+    </bottom>
+</BorderPane>

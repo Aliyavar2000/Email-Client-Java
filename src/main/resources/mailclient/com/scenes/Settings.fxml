@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="BorderSetting" prefHeight="620.0" prefWidth="1080.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingController">
+   <left>
+      <VBox prefHeight="620.0" prefWidth="226.0" styleClass="menu-panel" stylesheets="@../styles/styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="620.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="homepageButton" layoutX="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="163.0" prefWidth="215.0" style="-fx-background-color: #2a9d8f; -fx-cursor: hand;" styleClass="menu-button-home" stylesheets="@../styles/styles.css">
+                     <graphic>
+                        <ImageView fitHeight="185.0" fitWidth="186.0">
+                           <image>
+                              <Image url="@../images/logo_white.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <AnchorPane layoutY="185.0" prefHeight="427.0" prefWidth="226.0">
+                     <children>
+                        <Button fx:id="composeButton1" layoutX="14.0" layoutY="229.0" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Settings">
+                           <font>
+                              <Font name="Century" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="compose-button" />
+                              <String fx:value="text" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="syncButton" layoutX="14.0" layoutY="120.0" mnemonicParsing="false" onAction="#syncMessages" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Receive">
+                           <font>
+                              <Font name="Century" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="compose-button" />
+                              <String fx:value="text" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="terminateApp" layoutX="14.0" layoutY="330.0" mnemonicParsing="false" onAction="#terminateApp" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Quit">
+                           <font>
+                              <Font name="Century" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="compose-button" />
+                              <String fx:value="text" />
+                           </styleClass>
+                        </Button>
+                        <Button fx:id="composeButton" layoutX="13.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToCompose" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Compose">
+                           <font>
+                              <Font name="Century" size="12.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="compose-button" />
+                              <String fx:value="text" />
+                           </styleClass>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="620.0" prefWidth="805.0" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane prefHeight="620.0" prefWidth="854.0">
+               <top>
+                  <Button fx:id="settingBtn" mnemonicParsing="false" onAction="#switchToSettings" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Settings" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Century" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="compose-button" />
+                        <String fx:value="setting-button" />
+                        <String fx:value="text" />
+                     </styleClass>
+                     <BorderPane.margin>
+                        <Insets top="20.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </top>
+               <left>
+                  <BorderPane prefHeight="462.0" prefWidth="234.0" BorderPane.alignment="CENTER">
+                     <right>
+                        <VBox prefHeight="549.0" prefWidth="427.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane prefHeight="551.0" prefWidth="427.0" stylesheets="@../styles/styles.css">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="209.0" minWidth="10.0" prefWidth="101.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="370.0" minWidth="10.0" prefWidth="326.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="176.0" minHeight="0.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="366.0" minHeight="0.0" prefHeight="57.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="396.0" minHeight="0.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="396.0" minHeight="10.0" prefHeight="318.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Fullname">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Email" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Username" GridPane.rowIndex="2">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="Password" GridPane.rowIndex="3">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="HostSmtp" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="250.0" left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="PortSmtp" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="130.0" left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="HostPop3" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="20.0" left="23.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Label text="PortPop3" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets left="23.0" top="100.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <TextField fx:id="fname" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" />
+                                    <TextField fx:id="email" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextField fx:id="user" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <TextField fx:id="hsmtp" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="250.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <TextField fx:id="hpop3" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <GridPane.margin>
+                                          <Insets bottom="30.0" />
+                                       </GridPane.margin>
+                                    </TextField>
+                                    <PasswordField fx:id="pw" editable="false" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                    <GridPane prefHeight="318.0" prefWidth="322.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="266.0" minWidth="10.0" prefWidth="63.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="263.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                                        <RowConstraints maxHeight="199.0" minHeight="10.0" prefHeight="130.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="psmtp" prefHeight="26.0" prefWidth="71.0" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.rowIndex="1">
+                                             <GridPane.margin>
+                                                <Insets bottom="40.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                          <TextField fx:id="ppop3" prefHeight="0.0" prefWidth="63.0" styleClass="host-port-input" stylesheets="@../styles/styles.css" GridPane.rowIndex="2">
+                                             <GridPane.margin>
+                                                <Insets bottom="95.0" />
+                                             </GridPane.margin>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </right>
+                  </BorderPane>
+               </left>
+               <right>
+                  <Button fx:id="configBtn" mnemonicParsing="false" onAction="#DlConfig" prefHeight="51.0" prefWidth="200.0" stylesheets="@../styles/styles.css" text="Download Configurations" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Century" size="12.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="compose-button" />
+                        <String fx:value="setting-button" />
+                        <String fx:value="text" />
+                     </styleClass>
+                     <BorderPane.margin>
+                        <Insets bottom="300.0" right="20.0" />
+                     </BorderPane.margin>
+                  </Button>
+               </right>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
